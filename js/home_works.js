@@ -70,7 +70,7 @@ function stopCount() {
 }
 
 function resetCount() {
-  stopCount()
+  stopCount(g)
   count = 0
   updateCount();
 }

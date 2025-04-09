@@ -75,6 +75,7 @@ const tabContentItems = document.querySelector(".tab_content_items");
 
 let currentSlide = 0;
 const intervalTime = 3000;
+let autoSlideInterval;
 
 function hideTabItem() {
   tabContentBlock.forEach((block) => {
@@ -103,14 +104,14 @@ function nextSlide() {
   showContentBlock(currentSlide);
 }
 
-let autoSlideInterval;
 function startAutoSlide() {
+  clearInterval(autoSlideInterval);
   autoSlideInterval = setInterval(nextSlide, intervalTime);
 }
 
 hideTabItem();
 showContentBlock();
-startAutoSlide();
+startAutoSlide(); 
 
 tabContentItems.addEventListener("click", (event) => {
   const target = event.target;

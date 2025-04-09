@@ -16,13 +16,65 @@ phoneButton.onclick = () => {
 
 // TAB-SLIDER //
 
+// const tabContentBlock = document.querySelectorAll(".tab_content_block");
+// const tabContentItem = document.querySelectorAll(".tab_content_item");
+// const tabContentItems = document.querySelector(".tab_content_items");
+
+// let currentSlide = 0;
+// const intervalTime = 3000;
+
+
+// function hideTabItem() {
+//   tabContentBlock.forEach((block) => {
+//     block.style.display = "none";
+//   });
+//   tabContentItem.forEach((item) => {
+//     item.classList.remove("tab_content_item_active");
+//   });
+// }
+
+// function showContentBlock(index = 0) {
+//   if (tabContentBlock[index]) {
+//     tabContentBlock[index].style.display = "block";
+//     tabContentItem[index].classList.add("tab_content_item_active");
+//     currentSlide = index;
+//   }
+// }
+
+// function nextSlide() {
+//   currentSlide++;
+//   const totalSlides = tabContentBlock.length;
+//   if (currentSlide >= totalSlides) {
+//     currentSlide = 0;
+//   }
+//   hideTabItem();
+//   showContentBlock(currentSlide);
+// }
+
+// hideTabItem();
+// showContentBlock();
+
+// const autoSlideInterval = setInterval(nextSlide, intervalTime)
+// tabContentItems.addEventListener("click", (event) => {
+//   const target = event.target;
+//   if (target.classList.contains("tab_content_item")) {
+//     clearInterval(autoSlideInterval);
+//     tabContentItem.forEach((item, index) => {
+//       if (target === item) {
+//         hideTabItem();
+//         showContentBlock(index);
+//       }
+//     });
+//   }
+// });
+
+
 const tabContentBlock = document.querySelectorAll(".tab_content_block");
 const tabContentItem = document.querySelectorAll(".tab_content_item");
 const tabContentItems = document.querySelector(".tab_content_items");
 
 let currentSlide = 0;
-const intervalTime = 2000;
-let autoSlideInterval; 
+const intervalTime = 3000;
 
 function hideTabItem() {
   tabContentBlock.forEach((block) => {
@@ -51,26 +103,25 @@ function nextSlide() {
   showContentBlock(currentSlide);
 }
 
+let autoSlideInterval;
 function startAutoSlide() {
   autoSlideInterval = setInterval(nextSlide, intervalTime);
 }
 
 hideTabItem();
 showContentBlock();
-
 startAutoSlide();
+
 tabContentItems.addEventListener("click", (event) => {
   const target = event.target;
   if (target.classList.contains("tab_content_item")) {
-    clearInterval(autoSlideInterval);
     tabContentItem.forEach((item, index) => {
       if (target === item) {
         hideTabItem();
         showContentBlock(index);
       }
     });
-    setTimeout(startAutoSlide, intervalTime);
+    startAutoSlide();
   }
 });
-
 

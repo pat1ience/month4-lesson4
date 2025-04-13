@@ -216,6 +216,7 @@
     flex-direction: column;
     gap: 10px;
     text-align: center;
+    color: floralwhite;
 }
 
 .character-photo {
@@ -225,8 +226,17 @@
     margin: 0 auto;
 }
 
-.character-photo img {
+.character-photo {
     width: 100%;
-    height: 100%;
     object-fit: cover;
+}
+
+.character-name {
+    font-size: 20px;
+    color: #fff;
+}
+
+.character-age {
+    color: #cecece ;
+    font-size: 18px;
 }

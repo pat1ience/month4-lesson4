@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Леонардо Ди Каприо",
+    "age": 50,
+    "photo": "https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcSwLp-COysT7ukjE2mk6WglJk2dHvB5SI3JAjfUyUYFl7KNo6VuHu_hCeE6b9v0vgm-u6ZMm2PWqEv1S_g"
+  },
+  {
+    "name": "Уилл Смит",
+    "age": 56,
+    "photo": "https://www.telegraph.co.uk/content/dam/news/2025/03/27/TELEMMGLPICT000417601633_17430929397650_trans_NvBQzQNjv4Bq3y0RxGHFswcvmom-bhUWEEpq4oZ3iwbO4FwOpy4tLug.jpeg?imwidth=680"
+  },
+  {
+    "name": "Киллиан Мёрфи",
+    "age": 48,
+    "photo": "https://i.pinimg.com/736x/98/61/38/98613833db829707c232093bf2c9b992.jpg"
+  }
+]

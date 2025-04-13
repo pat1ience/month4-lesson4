@@ -70,8 +70,8 @@ function stopCount() {
 }
 
 function resetCount() {
-  stopCount(g)
-  count = 0
+  stopCount(g);
+  count = 0;
   updateCount();
 }
 
@@ -83,3 +83,47 @@ updateCount();
 startButton.addEventListener("click", startCount);
 stopButton.addEventListener("click", stopCount);
 resetButton.addEventListener("click", resetCount);
+
+// 4) homeWork
+
+const xhrActors = new XMLHttpRequest();
+xhrActors.open("GET", "/data/actors.json");
+xhrActors.setRequestHeader("Content-type", "application/json");
+xhrActors.send();
+
+xhrActors.onload = () => {
+  const charactersList = document.querySelector(".characters-list");
+  const data = JSON.parse(xhrActors.response);
+
+  charactersList.innerHTML = `
+    <div class="character-card">
+      <img class="character-photo" src="${data[0].photo}"></img>
+      <h4 class="character-name">${data[0].name}</h4>
+      <p class="character-age">${data[0].age}</p>
+    </div>
+
+        <div class="character-card">
+      <img class="character-photo" src="${data[1].photo}"></img>
+      <h4 class="character-name">${data[1].name}</h4>
+      <p class="character-age">${data[1].age}</p>
+    </div>
+
+        <div class="character-card">
+      <img class="character-photo" src="${data[2].photo}"></img>
+      <h4 class="character-name">${data[2].name}</h4>
+      <p class="character-age">${data[2].age}</p>
+    </div>
+  `;
+};
+
+// 5)homeWork
+
+const xhrAny = new XMLHttpRequest()
+xhrAny.open('GET', '/data/any.json')
+xhrAny.setRequestHeader('Content-type', 'application/json')
+xhrAny.send()
+
+xhrAny.onload = () => {
+  const data = JSON.parse(xhrActors.response);
+  console.log(data)
+};

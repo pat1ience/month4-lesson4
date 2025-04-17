@@ -118,12 +118,12 @@ xhrActors.onload = () => {
 
 // 5)homeWork
 
-const xhrAny = new XMLHttpRequest()
-xhrAny.open('GET', '/data/any.json')
-xhrAny.setRequestHeader('Content-type', 'application/json')
-xhrAny.send()
+const xhrAny = new XMLHttpRequest();
+xhrAny.open("GET", "/data/any.json");
+xhrAny.setRequestHeader("Content-type", "application/json");
+xhrAny.send();
 
 xhrAny.onload = () => {
   const data = JSON.parse(xhrActors.response);
-  console.log(data)
+  console.log(data);
 };
